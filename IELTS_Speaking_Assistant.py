@@ -1,21 +1,25 @@
 import random
 import time
 import os
+import threading
+
+from dotenv import load_dotenv
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 from gtts import gTTS
 import speech_recognition as sr
 import google.generativeai as genai
-import threading
 
 # --------------- INITIALIZATION SECTION ---------------
+# Load env
+load_dotenv()
 
 # Initialize the speech recognizer
 recognizer = sr.Recognizer()
 
 # Configure the Generative AI API for evaluation
-genai.configure(api_key="Your GenAI key")
+genai.configure(api_key=os.getenv("API_KEY"))
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 # --------------- FILE READING SECTION ---------------

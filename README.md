@@ -1,9 +1,11 @@
 # IELTS Speaking Assistant 🎤
 
 ## 📖 Giới thiệu
+
 **IELTS Speaking Assistant** là một ứng dụng Python hỗ trợ người dùng luyện tập kỹ năng nói IELTS. Ứng dụng cung cấp giao diện tương tác, đọc câu hỏi, nhận diện giọng nói và đánh giá câu trả lời dựa trên AI.
 
-### Các tính năng:
+### Các tính năng
+
 - **Giao diện tương tác**: Được xây dựng bằng `tkinter` giúp dễ sử dụng.
 - **Đọc câu hỏi bằng giọng nói**: Sử dụng Google Text-to-Speech (`gTTS`).
 - **Nhận diện giọng nói**: Chuyển giọng nói của người dùng thành văn bản.
@@ -12,34 +14,46 @@
 
 ## 🛠️ Cài đặt
 
-### Yêu cầu:
+### Yêu cầu
+
 1. **Python 3.8+** đã cài đặt trên máy.
 
 ### Cài đặt các thư viện Python
+
 Chạy lệnh sau để cài đặt các thư viện cần thiết:
 
-pip install gtts SpeechRecognition pyaudio google-generativeai pillow
-
-### 3. **Usage Instructions**
-## 🚀 Hướng dẫn sử dụng
-
-##### 1. Thay thế API Key
-
-Mở file Python chính (`IELTS_Speaking_Assistant.py`) và thay thế API key ở **dòng 18**:
-Lấy API key từ [Google Generative AI Studio](https://aistudio.google.com/app/apikey).
-
-```python
-# Thay "Your GenAI key" bằng API key của bạn
-genai.configure(api_key="Your GenAI key")
+```bash
+python -m venv env
+source env/bin/activate
+pip install -r requirements.txt
 ```
 
-##### 2. Chạy chương trình
+#### Cài đặt `pyaudio` trên WSL nếu gặp lỗi ERROR: Failed building wheel for pyaudio
+
+```bash
+sudo apt install portaudio19-dev
+```
+
+#### 1. Thêm API Key
+
+Lấy API key từ [Google Generative AI Studio](https://aistudio.google.com/app/apikey).
+
+Tạo file `.env` trong thư mục chứa mã nguồn và thêm API key của bạn vào file `.env`.
+
+```env
+API_KEY=Your-GenAI-key
+```
+
+#### 2. Chạy chương trình
+
 Chạy ứng dụng bằng Python:
 
 ```bash
 python IELTS_Speaking_Assistant.py
 ```
-##### 3. Quy trình sử dụng
+
+#### 3. Quy trình sử dụng
+
 1. Nhấn Start để bắt đầu phiên luyện tập.
 2. Ứng dụng sẽ đọc chủ đề và câu hỏi cho bạn.
 3. Bắt đầu đếm ngược 45 giây để bạn trả lời.
@@ -48,7 +62,8 @@ python IELTS_Speaking_Assistant.py
 6. Nhấn Next Question để chuyển sang câu hỏi tiếp theo.
 
 ### 4. **Project Structure**
-```
+
+```text
 📦 IELTS-Speaking-Assistant
 ├── IELTS-logo.png # Logo của ứng dụng
 ├── IELTS_Speaking_Assistant.py # File Python chính
@@ -57,6 +72,6 @@ python IELTS_Speaking_Assistant.py
 ├── README.md # Tài liệu hướng dẫn
 ```
 
-## 📜 Tác giả 
+## 📜 Tác giả
 
 - **Long Data Analyst** - Tác giả và nhà phát triển của IELTS Speaking Assistant. Theo dõi kênh TikTok: [@vuthanhlong25aus](https://www.tiktok.com/@vuthanhlong25aus)
